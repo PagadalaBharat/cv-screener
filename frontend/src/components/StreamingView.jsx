@@ -1,47 +1,33 @@
 import React from 'react'
 
-export default function StreamingView({ tokens }) {
+export default function StreamingView() {
   return (
     <div style={{
       background: 'var(--bg-input)',
       border: '1px solid var(--border)',
       borderRadius: 'var(--radius)',
-      padding: '1rem 1.25rem',
-      fontFamily: 'var(--mono)',
-      fontSize: 12,
-      color: 'var(--text-secondary)',
-      lineHeight: 1.7,
-      maxHeight: 300,
-      overflowY: 'auto',
-      whiteSpace: 'pre-wrap',
-      wordBreak: 'break-all',
+      padding: '1.25rem',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 16,
     }}>
-      {/* Header */}
-      <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:10 }}>
-        <span style={{
-          display: 'inline-block', width:8, height:8,
-          borderRadius:'50%', background:'var(--accent)',
-          animation:'pulse 1s infinite'
+      <div style={{ position: 'relative', width: 40, height: 40, flexShrink: 0 }}>
+        <div style={{
+          width: 40, height: 40, borderRadius: '50%',
+          border: '3px solid var(--accent-dim)',
+          borderTopColor: 'var(--accent)',
+          animation: 'spin 0.8s linear infinite',
         }} />
-        <span style={{ fontSize:11, color:'var(--text-muted)', fontFamily:'var(--font)' }}>
-          Live stream · Groq · Llama 3 70B
-        </span>
+        <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
       </div>
-
-      <style>{`
-        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-      `}</style>
-
-      {/* Streaming tokens */}
-      {tokens}
-
-      {/* Blinking cursor */}
-      <span style={{
-        display:'inline-block', width:2, height:'1em',
-        background:'var(--accent)', verticalAlign:'text-bottom',
-        animation:'blink 0.8s step-end infinite'
-      }} />
+      <div>
+        <p style={{ fontSize: 14, fontWeight: 500, color: 'var(--text-primary)', margin: 0 }}>
+          Analyzing candidate profile...
+        </p>
+        <p style={{ fontSize: 12, color: 'var(--text-muted)', margin: '4px 0 0' }}>
+          AI is reading the CV and matching against the job description
+        </p>
+      </div>
     </div>
   )
 }
