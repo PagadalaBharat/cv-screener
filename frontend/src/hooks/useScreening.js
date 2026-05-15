@@ -16,7 +16,7 @@ export function useScreening() {
     abortRef.current = new AbortController()
 
     try {
-      const backendUrl = import.meta.env.VITE_BACKEND_URL || ''
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'
       const res = await fetch(`${backendUrl}/screen`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
