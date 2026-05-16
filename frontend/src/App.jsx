@@ -3,6 +3,9 @@ import { useScreening } from './hooks/useScreening.js'
 import ResultsPanel from './components/ResultsPanel.jsx'
 import StreamingView from './components/StreamingView.jsx'
 import { Cpu, RefreshCw, Upload, FileText, X, Zap, Loader, AlertCircle, CheckCircle2, ShieldCheck } from 'lucide-react'
+import { Routes, Route } from 'react-router-dom'
+import SingleScreen from './pages/SingleScreen.jsx'
+import MultiScreen from './pages/MultiScreen.jsx'
 
 // ── Sanitize sensitive data from CV text ──
 const sanitizeCV = (text) => {
@@ -110,6 +113,13 @@ export default function App() {
     return cleaned
   }
 
+   return (
+    <Routes>
+      <Route path="/"      element={<SingleScreen />} />
+      <Route path="/multi" element={<MultiScreen />} />
+    </Routes>
+  )
+
   const handleFile = async (e) => {
     const file = e.target.files[0]
     if (!file) return
@@ -213,6 +223,9 @@ export default function App() {
   const isDone      = status === 'done'
   const isError     = status === 'error'
   const canScreen   = jd.trim().length > 10 && cv.trim().length > 10 && !isStreaming && !fileLoading
+
+
+
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
