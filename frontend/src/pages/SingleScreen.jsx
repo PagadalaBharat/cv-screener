@@ -84,7 +84,7 @@ export default function SingleScreen() {
         {!isDone && (
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px', marginBottom: '1rem', background: 'rgba(74,222,128,.05)', border: '1px solid rgba(74,222,128,.12)', borderRadius: 'var(--radius)', fontSize: 12, color: '#4ade80' }}>
             <ShieldCheck size={13} />
-            <span><strong>Privacy mode</strong> — Phone, email and addresses auto-removed before AI processing</span>
+            <span><strong>Privacy mode</strong> — Phone, email and urls auto-removed before AI processing</span>
           </div>
         )}
 

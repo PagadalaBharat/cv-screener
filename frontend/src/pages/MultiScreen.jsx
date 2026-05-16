@@ -183,7 +183,7 @@ export default function MultiScreen() {
 
         {results.length === 0 && (
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px', marginBottom: '1.25rem', background: 'rgba(74,222,128,.05)', border: '1px solid rgba(74,222,128,.12)', borderRadius: 'var(--radius)', fontSize: 12, color: '#4ade80' }}>
-            <ShieldCheck size={13} /> <span><strong>Privacy mode</strong> — Phone, email and addresses auto-removed from all CVs</span>
+            <ShieldCheck size={13} /> <span><strong>Privacy mode</strong> — Phone, email and urls auto-removed from all CVs</span>
           </div>
         )}
 

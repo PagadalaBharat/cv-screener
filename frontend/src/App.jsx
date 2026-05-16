@@ -342,7 +342,7 @@ export default function App() {
           }}>
             <ShieldCheck size={13} style={{ flexShrink: 0 }} />
             <span>
-              <strong>Privacy mode active</strong> — Phone numbers, email addresses, URLs and physical addresses are automatically removed from CV text before processing.
+              <strong>Privacy mode active</strong> — Phone numbers, email addresses and URLs are automatically removed from CV text before processing.
             </span>
           </div>
         )}
